@@ -1,10 +1,10 @@
-# Skorp Finance
+# Skorp Financy
 
 [Português](#versao-em-portugues) | [English](#english-version)
 
-> **Aviso de código privado:** Este repositório é a vitrine pública de arquitetura do Skorp Finance. O código-fonte é privado. Demonstração ao vivo sob pedido: [antonymsandrade@gmail.com](mailto:antonymsandrade@gmail.com) ou [LinkedIn](https://www.linkedin.com/in/antonyandrade01/).
+> **Aviso de código privado:** Este repositório é a vitrine pública de arquitetura do Skorp Financy. O código-fonte é privado. Demonstração ao vivo sob pedido: [antonymsandrade@gmail.com](mailto:antonymsandrade@gmail.com) ou [LinkedIn](https://www.linkedin.com/in/antonyandrade01/).
 >
-> **Private repository notice:** This repository is the public architecture showcase for Skorp Finance. Source code is private. Live demos are available on request: [antonymsandrade@gmail.com](mailto:antonymsandrade@gmail.com) or [LinkedIn](https://www.linkedin.com/in/antonyandrade01/).
+> **Private repository notice:** This repository is the public architecture showcase for Skorp Financy. Source code is private. Live demos are available on request: [antonymsandrade@gmail.com](mailto:antonymsandrade@gmail.com) or [LinkedIn](https://www.linkedin.com/in/antonyandrade01/).
 
 **No ar / Live:** [financeiro.antonyandrade.com.br](https://financeiro.antonyandrade.com.br) (app no ar; pede login / live app; requires login). Acesso de demonstração sob pedido / Demo access on request.
 
@@ -31,12 +31,11 @@ flowchart LR
 
 A primeira versão do sistema (feita em FastAPI) associava todas as transações a um único `user_id`, dificultando o controle financeiro compartilhado em família, e acumulava problemas estruturais na conciliação de extratos e na modelagem de contas.
 
-O Skorp Finance nasceu para corrigir essas limitações com isolamento por espaço familiar (`workspace`), contas privadas ou compartilhadas, conciliação de extratos (CSV, OFX e PDF) e leitura de NFC-e. Também serviu como projeto prático para estudar Java 25 e Spring Boot 4: a escrita do código Java contou com apoio pesado de agentes de IA sob minha direção, enquanto eu conduzi a auditoria do sistema anterior em Python, o desenho dos módulos, as 31 migrations Flyway, as políticas de RLS e as regras de conciliação.
+O Skorp Financy nasceu para corrigir essas limitações com isolamento por espaço familiar (`workspace`), contas privadas ou compartilhadas, conciliação de extratos (CSV, OFX e PDF) e leitura de NFC-e. Também serviu como projeto prático para estudar Java 25 e Spring Boot 4: a escrita do código Java contou com apoio pesado de agentes de IA sob minha direção, enquanto eu conduzi a auditoria do sistema anterior em Python, o desenho dos módulos, as 31 migrations Flyway, as políticas de RLS e as regras de conciliação.
 
 ### Números reais
 
-- Projeto pausado no momento; usado por mim e por mais um colega (outras pessoas testaram e não continuaram).
-- Banco com histórico migrado de 23 usuários, 945 transações e 36 importações de extrato.
+- Projeto de estudo de Java e Spring Boot, com o histórico da versão anterior em FastAPI migrado.
 - Backend em Java 25 + Spring Boot 4 (4.1.1 no `pom.xml`) com Spring Modulith 2.1.1 organizado em 10 módulos (`identity`, `workspace`, `ledger`, `planning`, `investments`, `imports`, `receipts`, `insights`, `gamification`, `billing`).
 - Soma 115 arquivos Java de produção, 32 arquivos de teste (JUnit 5 + Testcontainers com PostgreSQL real) e 31 migrations Flyway.
 
@@ -66,11 +65,11 @@ Como Java não é minha linguagem principal (estou estudando), exigi testes de i
 
 ### Em produção vs. em teste
 
-Em produção (pausado, uso restrito):
+No ar (projeto de estudo):
 - API Java 25 / Spring Boot 4, banco PostgreSQL 18 com migrations Flyway e frontend web em Next.js 16 + React 19 publicados no Coolify via Cloudflare Tunnel, com backup diário.
 - Cadastro de workspaces, contas, lançamentos, categorização, importação de extratos e migração conferida da base anterior.
 
-Em teste / pausado:
+Ainda não concluído:
 - Aplicativo mobile em React Native (Expo SDK 57) com autenticação local e captura de comprovantes.
 - Módulo de OCR para fotos de comprovante e abertura externa multiusuário.
 
@@ -83,12 +82,11 @@ Em teste / pausado:
 
 The first version of this personal finance tool (built in FastAPI) tied every transaction to a single `user_id`, blocking shared household budgets and accumulating reconciliation bugs across statement imports.
 
-Skorp Finance rebuilds the domain around shared workspaces, private or shared accounts, bank statement reconciliation (CSV, OFX, PDF), and Brazilian receipt (NFC-e) parsing. It also acts as a hands-on study project for Java 25 and Spring Boot 4: AI coding agents wrote much of the Java code under my supervision, while I audited the legacy Python database, defined the modular layout, designed the 31 Flyway migrations, configured PostgreSQL RLS, and set the reconciliation rules.
+Skorp Financy rebuilds the domain around shared workspaces, private or shared accounts, bank statement reconciliation (CSV, OFX, PDF), and Brazilian receipt (NFC-e) parsing. It also acts as a hands-on study project for Java 25 and Spring Boot 4: AI coding agents wrote much of the Java code under my supervision, while I audited the legacy Python database, defined the modular layout, designed the 31 Flyway migrations, configured PostgreSQL RLS, and set the reconciliation rules.
 
 ### Real numbers
 
-- Currently paused; used by me and one colleague (a few other testers tried it and stopped).
-- Migrated dataset contains 23 users, 945 transactions, and 36 statement imports.
+- Study project for Java and Spring Boot, with the data from the earlier FastAPI version migrated.
 - Java 25 + Spring Boot 4 (4.1.1 in `pom.xml`) modular monolith built with Spring Modulith 2.1.1 across 10 modules (`identity`, `workspace`, `ledger`, `planning`, `investments`, `imports`, `receipts`, `insights`, `gamification`, `billing`).
 - Contains 115 production Java files, 32 test files (JUnit 5 + Testcontainers against real PostgreSQL), and 31 Flyway migrations.
 
@@ -118,10 +116,10 @@ Because I am actively learning Java rather than claiming production mastery, I r
 
 ### Production vs. in testing
 
-In production (paused, limited personal use):
+Live (study project):
 - Java 25 / Spring Boot 4 API, PostgreSQL 18 with Flyway migrations, and Next.js 16 + React 19 web app deployed on Coolify behind Cloudflare Tunnel, with daily backups.
 - Workspaces, accounts, ledger entries, categorization, statement imports, and verified legacy migration.
 
-In testing / paused:
+Not finished yet:
 - React Native (Expo SDK 57) mobile app with local biometric auth and receipt capture.
 - Receipt photo OCR container and public multi-user onboarding.
