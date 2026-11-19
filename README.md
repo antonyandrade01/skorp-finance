@@ -6,6 +6,8 @@
 >
 > **Private repository notice:** This repository is the public architecture showcase for Skorp Finance. Source code is private. Live demos are available on request: [antonymsandrade@gmail.com](mailto:antonymsandrade@gmail.com) or [LinkedIn](https://www.linkedin.com/in/antonyandrade01/).
 
+**No ar / Live:** [financeiro.antonyandrade.com.br](https://financeiro.antonyandrade.com.br) (app no ar; pede login / live app; requires login). Acesso de demonstração sob pedido / Demo access on request.
+
 ---
 
 ## Arquitetura / Architecture
